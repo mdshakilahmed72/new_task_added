@@ -74,10 +74,26 @@ WSGI_APPLICATION = 'new_task.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# for Sqlite Database
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+# For Django Postgre
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default':{
+        'ENGINE':'django.db.backends.postgresql',
+        'NAME':'new_task_create',
+        'USER':'postgres',
+        'PASSWORD':'4737',
+        'HOST':'localhost',
+        'PORT':'5432'
     }
 }
 
