@@ -1,5 +1,5 @@
 from django import forms
-from task.models import Task
+from task.models import Task ,Task_Details
 
 
 #Django Form 
@@ -91,6 +91,19 @@ class TaskModelForm(styledformixin,forms.ModelForm):
     def __init__(self,*arg,**kwargs):
         super().__init__(*arg,**kwargs)
         self.apply_wiget_style()
+
+
+# TaskDetail Model Form
+
+class TaskDetailModelForm(styledformixin,forms.ModelForm):
+    class Meta:
+        model = Task_Details
+        fields = ['priority','notes']
+    
+    def __init__(self,*arg,**kwargs):
+        super().__init__(*arg,**kwargs)
+        self.apply_wiget_style()
+
 
 
 
