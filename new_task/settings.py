@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -93,18 +94,27 @@ WSGI_APPLICATION = 'new_task.wsgi.application'
 # }
 
 
+DATABASES = {
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://create_task_user:tHX8KYBNioRiRbmthriDr1O4MOotdbqn@dpg-d18rch2dbo4c73cmdss0-a.oregon-postgres.render.com/create_task',
+        conn_max_age=600
+    )
+}
+
 # For Django Postgre
 
-DATABASES = {
-    'default':{
-        'ENGINE':'django.db.backends.postgresql',
-        'NAME':'new_task_create',
-        'USER':'postgres',
-        'PASSWORD':'4737',
-        'HOST':'localhost',
-        'PORT':'5432'
-    }
-}
+# DATABASES = {
+#     'default':{
+#         'ENGINE':'django.db.backends.postgresql',
+#         'NAME':'new_task_create',
+#         'USER':'postgres',
+#         'PASSWORD':'4737',
+#         'HOST':'localhost',
+#         'PORT':'5432'
+#     }
+# }
+
 
 
 # Password validation

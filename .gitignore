@@ -1,4 +1,3 @@
-*.txt
 git_token.txt
 __pycache__/
 db.sqlite3
